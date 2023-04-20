@@ -9,3 +9,6 @@ true-color = true
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.lsp]
+display-inlay-hints = true
