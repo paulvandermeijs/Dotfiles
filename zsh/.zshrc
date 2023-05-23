@@ -99,10 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias htop="TERM=screen-256color htop"
 alias jira="TERM=screen-256color jira"
 alias wrk="~/Workspace/wrk/target/release/wrk"
-alias owrk="~/Workspace/wrk/target/release/wrk -o"
-alias twrk="~/Workspace/wrk/target/release/wrk -x 'tmux new -s \$(pwd | awk -F/ \"{ print \\\$NF }\")'"
+alias owrk="wrk -o"
+alias twrk="wrk -x 'tmux new -s \$(pwd | awk -F/ \"{ print \\\$NF }\")'"
 
 tmux() {
    if [ "$#" -eq 0 ]
