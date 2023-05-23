@@ -1,0 +1,28 @@
+[[language]]
+name = "php"
+file-types = ["php", "phtml"]
+
+[[language]]
+name = "xml"
+formatter = { command = "prettier", args = ["--parser", "xml", "--xml-whitespace-sensitivity", "ignore"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
