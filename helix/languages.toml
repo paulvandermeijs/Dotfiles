@@ -9,20 +9,20 @@ auto-format = true
 
 [[language]]
 name = "javascript"
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.js"] }
 auto-format = true
 
 [[language]]
 name = "jsx"
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.jsx"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.ts"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.tsx"] }
 auto-format = true
