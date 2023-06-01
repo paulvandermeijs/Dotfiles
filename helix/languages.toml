@@ -27,3 +27,14 @@ auto-format = true
 name = "tsx"
 formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.tsx"] }
 auto-format = true
+
+[[language]]
+name = "less"
+scope = "source.less"
+injection-regex = "less"
+file-types = ["less"]
+roots = []
+formatter = { command = "prettier", args = ["--parser", "less", "--stdin-filepath", "source.less"] }
+auto-format = true
+indent = { tab-width = 4, unit = "    " }
+grammar = "css"
