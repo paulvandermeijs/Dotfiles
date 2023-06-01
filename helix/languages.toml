@@ -1,6 +1,7 @@
 [[language]]
 name = "php"
 file-types = ["php", "phtml"]
+auto-format = true
 
 [[language]]
 name = "xml"
