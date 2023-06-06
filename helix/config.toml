@@ -12,6 +12,7 @@ select = "underline"
 
 [editor.lsp]
 display-inlay-hints = true
+inline-diagnostics.other-lines = ["hint", "info", "warning", "error"]
 
 [editor.file-picker]
 hidden = false
