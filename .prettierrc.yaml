@@ -6,3 +6,7 @@ overrides:
       - "*.tsx"
     options:
       singleQuote: true
+  - files:
+      - "*.less"
+    options:
+      singleQuote: true
