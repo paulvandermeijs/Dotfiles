@@ -10,3 +10,7 @@ overrides:
       - "*.less"
     options:
       singleQuote: true
+  - files:
+      - "*.xml"
+    options:
+      printWidth: 120
