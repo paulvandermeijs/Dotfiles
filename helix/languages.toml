@@ -5,7 +5,7 @@ auto-format = true
 
 [[language]]
 name = "xml"
-formatter = { command = "prettier", args = ["--parser", "xml", "--stdin-filepath", "source.xml", "--xml-whitespace-sensitivity", "ignore"] }
+formatter = { command = "prettier", args = ["--parser", "xml", "--stdin-filepath", "source.xml"] }
 auto-format = true
 
 [[language]]
