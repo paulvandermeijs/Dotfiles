@@ -1,0 +1,5 @@
+{
+    "end-with-newline": true,
+    "wrap_line_length": 120,
+    "wrap_attributes": "force-expand-multiline"
+}
