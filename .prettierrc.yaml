@@ -11,6 +11,10 @@ overrides:
     options:
       singleQuote: true
   - files:
+      - "*.md"
+    options:
+      proseWrap: "always"
+  - files:
       - "*.xml"
     options:
       printWidth: 120
