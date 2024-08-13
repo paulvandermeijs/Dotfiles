@@ -46,6 +46,22 @@ mf() {
   done
 }
 
+goto() {
+  if [ -z $1 ]; then
+    echo "Please provide a search query";
+    return 1;
+  fi
+
+  FILEPATH=$(fd $1 | fzf)
+
+  if [ -z $FILEPATH ]; then
+    echo "Nothing selected";
+    return 0;
+  fi
+
+  cd $(dirname $FILEPATH)
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
