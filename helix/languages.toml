@@ -1,7 +1,15 @@
+[language-server.gitls]
+command = "gitls"
+
 [[language]]
 name = "php"
 file-types = ["php", "phtml"]
+language-servers = [ "intelephense", "gitls" ]
 auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer", "gitls" ]
 
 [[language]]
 name = "xml"
@@ -10,22 +18,31 @@ auto-format = true
 
 [[language]]
 name = "javascript"
+language-servers = [ "typescript-language-server", "gitls" ]
 formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.js"] }
 auto-format = true
 
 [[language]]
 name = "jsx"
+language-servers = [ "typescript-language-server", "gitls" ]
 formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.jsx"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
+language-servers = [ "typescript-language-server", "gitls" ]
 formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.ts"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
+language-servers = [ "typescript-language-server", "gitls" ]
 formatter = { command = "prettier", args = ["--parser", "typescript", "--stdin-filepath", "source.tsx"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown", "--stdin-filepath", "source.md"] }
 auto-format = true
 
 [[language]]
@@ -38,3 +55,21 @@ formatter = { command = "prettier", args = ["--parser", "less", "--stdin-filepat
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 grammar = "css"
+
+[language-server.typescript-language-server.config.typescript.inlayHints]
+includeInlayEnumMemberValueHints = true
+includeInlayFunctionLikeReturnTypeHints = false
+includeInlayFunctionParameterTypeHints = false
+includeInlayParameterNameHints = "none"
+includeInlayParameterNameHintsWhenArgumentMatchesName = false
+includeInlayPropertyDeclarationTypeHints = true
+includeInlayVariableTypeHints = true
+
+[language-server.typescript-language-server.config.javascript.inlayHints]
+includeInlayEnumMemberValueHints = true
+includeInlayFunctionLikeReturnTypeHints = true
+includeInlayFunctionParameterTypeHints = true
+includeInlayParameterNameHints = "none"
+includeInlayParameterNameHintsWhenArgumentMatchesName = true
+includeInlayPropertyDeclarationTypeHints = true
+includeInlayVariableTypeHints = true
