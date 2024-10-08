@@ -8,7 +8,19 @@ plugins=(docker git npm rust)
 
 source $ZSH/oh-my-zsh.sh
 
-prompt_context() {}
+prompt_status() {
+  local -a symbols
+
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+
+  [[ -n "$symbols" ]] && prompt_segment '#121926' default "$symbols %{%F{#17202F}%}\UE0B1"
+}
+
+prompt_context() {
+  prompt_segment '#121926' '#4C5669' "%D{%H:%M}"
+}
 
 prompt_dir() {
   prompt_segment '#121926' '#99A4B8' '%c'
@@ -16,13 +28,15 @@ prompt_dir() {
 
 export WORKSPACE_HOME=~/Workspace
 export HELIX_HOME=$WORKSPACE_HOME/helix
+export HELIX_RUNTIME=$HELIX_HOME/runtime
 
-alias hx="HELIX_RUNTIME=$HELIX_HOME/runtime $HELIX_HOME/target/release/hx"
 alias mr="glab mr create -fy -a god --remove-source-branch"
-alias wrk="$WORKSPACE_HOME/wrk/target/release/wrk"
+alias gl='git lg --branches --remotes'
+alias gs='git status'
+alias ta='tmux a'
+alias tk='tmux kill-session'
 alias owrk='wrk -o'
 alias twrk="wrk -x 'tmux new -As \$(pwd | awk -F/ \"{ print \\\$NF }\")'"
-alias cwrk="wrk -x 'code .'"
 alias jira='TERM=screen-256color jira'
 alias htop='TERM=screen-256color htop'
 alias ssh='TERM=screen-256color ssh'
